@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const Body = () => {
 
-    //state varaibles
+    //state varaibles for storing the state
     // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
     const [listOfRestaurants, setlistOfRestaurants] = useState([]);
     const [searchText, setSearchText] = useState([]);
