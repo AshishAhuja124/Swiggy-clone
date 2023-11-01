@@ -17,6 +17,7 @@ const Header = () => {
       <div className="nav-items">
         <ul>
           <li>
+            {/**basically its similar to router link */}
           <Link to="/"> Home </Link>
             </li>
           <li>
