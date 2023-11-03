@@ -24,10 +24,15 @@ class UserClass extends React.Component {
         });
     }
 
+    //componentDidUpdate is calledd once the new values are updated to DOM
     componentDidUpdate() {
         console.log("componet did update");
     }
     
+    //Component will mount be called once the user moves away to other page.
+    componentWillUnmount() {
+        console.log("component will mount");
+    }
     render() {
         const {name, location, login, avatar_url} = this.state.userInfo
         
