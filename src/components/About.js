@@ -8,9 +8,26 @@ const About = () => {
             <h1>About Us</h1>
             <h2>This is my cloning website</h2>
             {/* <User  name = {"Ashish function"}/> */}
-            <UserClass name = {"Ashish Classes compo"} location={"Hyderabadi class"} />
+            <UserClass name = {"First Child"} location={"Hyderabadi class"} />
+            <UserClass name = {"Second Child"} location={"USA"} />
+
         </div>
     )
 }
+
+//Life cycle
+//  Parent constructorr
+//  parent render
+ 
+//  - First constructorr
+//  - First render
+
+//  - Second con
+//  - Second render
+
+//  - First componentDidMount
+//  - Second Component did MouseEvent
+
+//  - Parent componentDidMount
 
 export default About;
