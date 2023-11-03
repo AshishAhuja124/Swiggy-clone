@@ -9,7 +9,6 @@ const About = () => {
             <h2>This is my cloning website</h2>
             {/* <User  name = {"Ashish function"}/> */}
             <UserClass name = {"First Child"} location={"Hyderabadi class"} />
-            <UserClass name = {"Second Child"} location={"USA"} />
 
         </div>
     )
