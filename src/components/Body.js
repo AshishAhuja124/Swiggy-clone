@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -38,6 +39,13 @@ const Body = () => {
         setListOfFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
+
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false)
+        return (
+            <h1>Hey it looks like your internet connection is down</h1>
+        )
     //Conditional rendering
 
 
