@@ -20,5 +20,21 @@ const RestaurantCard = (props) => {
         </div>
     );
 };
+// Higher Order Component
+
+// input - RestaurantCard =>> Restaurant card with offer text
+
+export const withOfferTextOnCard = (RestaurantCard) => {
+    return ({resData}) => {
+        let offerDetails = resData.info.aggregatedDiscountInfoV3;
+        return (
+            <div >
+                <label className='absolute bg-black text-white m-2 p-2 rounded-md' >{offerDetails.header + " " + offerDetails.subHeader}</label>
+                <RestaurantCard resData={resData} />
+            </div>
+        )
+
+    }
+}
 
 export default RestaurantCard;

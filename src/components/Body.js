@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withOfferTextOnCard} from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ const Body = () => {
     const [listOfRestaurants, setlistOfRestaurants] = useState([]);
     const [searchText, setSearchText] = useState([]);
     const [listOfFilteredRestaurants, setListOfFilteredRestaurants] = useState([]);
+    const RestaurantCardOfferText = withOfferTextOnCard(RestaurantCard);
 
     const getTopRatedRes = () => {
         const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
@@ -24,7 +25,7 @@ const Body = () => {
         setListOfFilteredRestaurants(filteredRes);
     }
 
-    console.log("Body Rendered");
+    console.log("Body Rendered",listOfRestaurants);
 
     useEffect(() => {
         fetchData();
@@ -82,7 +83,10 @@ const Body = () => {
                     <Link
                         key={restaurant?.info?.id}
                         to={"/restaurants/" + restaurant?.info?.id} >
-                        <RestaurantCard resData={restaurant} />
+                        {restaurant.info.aggregatedDiscountInfoV3 ? (
+                            <RestaurantCardOfferText resData={restaurant} />) : (
+                            <RestaurantCard resData={restaurant} />
+                        )}
                     </Link>
                 ))}
             </div>
