@@ -8,7 +8,7 @@ const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="flex justify-between bg-pink-100 m-2">
+    <div className="flex justify-between bg-pink-100 m-2 shadow-lg ">
       <div className="logo-container">
         <img
           className="w-40"
@@ -17,9 +17,9 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-4">
-          {/* <li>
-            Status: {onlineStatus ? "online": "offline"}
-          </li> */}
+          <li>
+            Status: {onlineStatus ? "✅" : "🔴"}
+          </li>
           <li className="px-4">
             {/**basically its similar to router link */}
             <Link to="/"> Home </Link>
