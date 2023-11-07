@@ -25,11 +25,12 @@ const RestaurantCard = (props) => {
 // input - RestaurantCard =>> Restaurant card with offer text
 
 export const withOfferTextOnCard = (RestaurantCard) => {
-    return ({resData}) => {
+    return (props) => {
+        const {resData} = props;
         let offerDetails = resData.info.aggregatedDiscountInfoV3;
         return (
             <div >
-                <label className='absolute bg-black text-white m-2 p-2 rounded-md' >{offerDetails.header + " " + offerDetails.subHeader}</label>
+                <label className='absolute bg-black text-white m-2 p-2 rounded-sm' >{offerDetails.header + " " + (offerDetails.subHeader || '' )}</label>
                 <RestaurantCard resData={resData} />
             </div>
         )
