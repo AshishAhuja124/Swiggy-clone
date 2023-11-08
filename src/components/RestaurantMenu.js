@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
             </h1>
             <h3 className="font-semibold text-lg">{cuisines.join(", ")} - {costForTwoMessage}</h3>
             {categories.map((category) => 
-                <RestaurantCategory data= {category.card.card}/>
+                <RestaurantCategory key={category.card.card.title} data= {category.card.card}/>
             )}
         </div>
     )
