@@ -2,10 +2,13 @@ import RestaurantCard,{withOfferTextOnCard} from "./RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+
 
 const Body = () => {
+    const {loggedInUser,setUserName} = useContext(UserContext);
 
     //state varaibles for storing the state
     // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
@@ -75,6 +78,14 @@ const Body = () => {
                     >
                         Top Rated restaurants
                     </button>
+                </div>
+
+                <div className="m-4 p-4 flex items-center">
+                    <label>Username</label>
+                    <input className="border border-black p-2"
+                    value = {loggedInUser}
+                    onChange={(e) => setUserName(e.target.value)}
+                    ></input>
                 </div>
                 
             </div>
